@@ -1,7 +1,8 @@
-'use strict'
-const Factory = require('../utils/variables').Factory;
 const actionsType = require('../utils/variables').actionsType;
-
+const gateways = {
+  paypal: require('./factory/stripe'),
+  stripe: require('./factory/paypal'),
+}
 function isActive(gatewayName, action){
     //to do
     return true;
@@ -32,7 +33,7 @@ function reimburse(gatewayName){
 }
 
 function partialReimburse(gatewayName){
-    const gatewayFactory = require(Factory[gatewayName])
+    const gatewayFactory = gateways.gatewayName;
     const result = gatewayFactory.partialReimburse(gatewayName);
     return result;
 }

@@ -1,8 +1,3 @@
-const Factory = {
-    stripe: './factory/stripe',
-    paypal: './factory/paypal'
-};
-
 const actionsType = {
     pay: 'pay',
     reimburse: 'reimburse',
@@ -10,6 +5,5 @@ const actionsType = {
 };
 
 module.exports = {
-    Factory,
     actionsType
 }

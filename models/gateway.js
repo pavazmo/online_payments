@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var gatewaySchema = new Schema({
-    name: { type: String },
+    name: { type: String, index: { unique: true }},
     active: {type: Boolean},
     functions: {
         pay: { type: Boolean },
